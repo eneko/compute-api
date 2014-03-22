@@ -4,6 +4,7 @@ ComputeApi::Application.routes.draw do
   get 'sum/:a/:b' => 'math#sum'
   get 'difference/:a/:b' => 'math#difference'
   get 'product/:a/:b' => 'math#product'
+  get 'power/:a/:b' => 'math#power'
 
   # String manipulation
   get 'concat/:a/:b' => 'strings#concat'
