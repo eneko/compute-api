@@ -1,4 +1,15 @@
 ComputeApi::Application.routes.draw do
+
+  # Math
+  get 'sum/:a/:b' => 'math#sum'
+  get 'difference/:a/:b' => 'math#difference'
+  get 'product/:a/:b' => 'math#product'
+
+  # String manipulation
+  get 'concat/:a/:b' => 'strings#concat'
+  get 'reverse/:a' => 'strings#reverse'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
