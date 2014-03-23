@@ -1,8 +1,13 @@
 class MathController < ApplicationController
 
   def sum
-    a = params[:a].to_i
-    b = params[:b].to_i
+    n = params[:n].split('/').map { |n| n.to_i }
+    render :json => n.sum
+  end
+
+  def sum_float
+    a = params[:a].to_f
+    b = params[:b].to_f
     render :json => a + b
   end
 

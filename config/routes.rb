@@ -1,7 +1,9 @@
 ComputeApi::Application.routes.draw do
 
   # Math
-  get 'sum/:a/:b' => 'math#sum'
+  get 'sum/*n', :to => 'math#sum', :constraints => {:n => /(\-?\d+\/?)+/}, :format => false
+  get 'sumf/:a/:b', :to => 'math#sum_float', :constraints => {:a => /\-?\d+(.\d+)?/, :b => /\-?\d+(.\d+)?/}, :format => false
+
   get 'difference/:a/:b' => 'math#difference'
   get 'product/:a/:b' => 'math#product'
   get 'power/:a/:b' => 'math#power'
